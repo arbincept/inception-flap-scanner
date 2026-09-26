@@ -22,6 +22,18 @@ A real-time on-chain token launch screener, Flap.sh bonding curve telemetry trac
 **Hugging Face Space:** [https://huggingface.co/spaces/Lucace/inception-flap-scanner](https://huggingface.co/spaces/Lucace/inception-flap-scanner)  
 **License:** [MIT](./LICENSE)
 
+## Demo & Concrete Example
+
+Open the [live scanner](https://lucace-inception-flap-scanner.hf.space) to inspect the current launch feed without providing a private key. Select a token to view its bonding-curve telemetry, holder concentration and automated audit verdict, then use the embedded DexScreener view for additional market context.
+
+Example workflow:
+
+1. Open a newly indexed launch from the live feed.
+2. Check the curve progress, liquidity, top-holder concentration and developer holding data.
+3. Read the four audit signals before deciding whether further research is warranted.
+
+The scanner is an informational, read-only tool; its signals are not investment advice and can be affected by RPC availability and changing on-chain data.
+
 ---
 
 ## 🏛️ System Architecture
