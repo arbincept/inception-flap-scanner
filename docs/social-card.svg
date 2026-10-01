@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-labelledby="title description">
+  <title id="title">Inception Flap Scanner — by Lukecele</title>
+  <desc id="description">Explore token launches on BNB Chain. Launch feed, curve telemetry and automated contract signals. Decorative scanner rings use the application's cyan and charcoal palette; no token metrics are depicted.</desc>
+  <defs>
+    <radialGradient id="glow"><stop stop-color="#45a29e" stop-opacity=".18"/><stop offset="1" stop-color="#0b0c10" stop-opacity="0"/></radialGradient>
+    <linearGradient id="line"><stop stop-color="#66fcf1"/><stop offset="1" stop-color="#45a29e" stop-opacity=".15"/></linearGradient>
+  </defs>
+  <rect width="1280" height="640" fill="#0b0c10"/>
+  <ellipse cx="1000" cy="220" rx="390" ry="330" fill="url(#glow)"/>
+  <path d="M64 62H1216" stroke="#263c42"/>
+  <path d="M64 62H200" stroke="#66fcf1" stroke-width="4"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="64" y="108" fill="#66fcf1" font-size="21" font-weight="700" letter-spacing="3">BNB CHAIN · OPEN SOURCE</text>
+    <text x="60" y="208" fill="#ffffff" font-size="76" font-weight="700" letter-spacing="-2">Inception</text>
+    <text x="60" y="288" fill="#ffffff" font-size="76" font-weight="700" letter-spacing="-2">Flap Scanner</text>
+    <text x="64" y="366" fill="#c5c6c7" font-size="35">Explore token launches</text>
+    <text x="64" y="412" fill="#c5c6c7" font-size="35">on BNB Chain</text>
+    <path d="M64 472H648" stroke="#263c42"/>
+    <text x="64" y="526" fill="#66fcf1" font-size="35" font-weight="700">by Lukecele</text>
+    <text x="64" y="571" fill="#c5c6c7" font-size="23">Luca Celebrano · Arbitrage Inception</text>
+    <g aria-hidden="true">
+      <circle cx="1000" cy="241" r="146" fill="none" stroke="#45a29e" stroke-opacity=".2"/>
+      <circle cx="1000" cy="241" r="99" fill="none" stroke="#45a29e" stroke-opacity=".25"/>
+      <circle cx="1000" cy="241" r="50" fill="none" stroke="#45a29e" stroke-opacity=".35"/>
+      <path d="M824 241H1176M1000 65V417" stroke="#45a29e" stroke-opacity=".2"/>
+      <path d="M1000 241L1096 132" stroke="url(#line)" stroke-width="2"/>
+      <circle cx="1000" cy="241" r="7" fill="#66fcf1"/>
+      <circle cx="1096" cy="132" r="5" fill="#66fcf1"/>
+      <circle cx="934" cy="280" r="5" fill="#45a29e"/>
+    </g>
+    <rect x="778" y="334" width="438" height="220" rx="18" fill="#111c22" stroke="#34565b"/>
+    <path d="M802 408H1192M802 480H1192" stroke="#263c42"/>
+    <g fill="#66fcf1"><circle cx="813" cy="374" r="4"/><circle cx="813" cy="445" r="4"/><circle cx="813" cy="517" r="4"/></g>
+    <g fill="#ffffff" font-size="27"><text x="838" y="384">Launch feed</text><text x="838" y="455">Curve telemetry</text><text x="838" y="527">Contract signals</text></g>
+  </g>
+</svg>

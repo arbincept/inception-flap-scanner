@@ -14,7 +14,7 @@ Built and maintained by **[Luca Celebrano · @Lukecele](https://github.com/Lukec
 
 **[Open app](https://lucace-inception-flap-scanner.hf.space)** · **[Star this repository](https://github.com/arbincept/inception-flap-scanner)** · **[Follow Lukecele](https://github.com/Lukecele)**
 
-[Quick start](#quick-start) · [Contribute](#contribute) · [MIT license](LICENSE)
+[Watch the 20-second demo](docs/scanner-demo.webm) · [Source](https://github.com/arbincept/inception-flap-scanner) · [Quick start](#quick-start) · [Contribute](#contribute) · [MIT license](LICENSE)
 
 </div>
 
@@ -37,6 +37,8 @@ Built with **React, Vite, Node.js, and ethers**, with a Docker deployment on [Hu
 2. Inspect bonding-curve progress, holder concentration, and developer holdings where data is available.
 3. Compare the automated screening signals with the linked source data.
 
+The [demo recording](docs/scanner-demo.webm) shows the public feed, token selection, curve telemetry, and screening indicators as displayed on October 1, 2026. Unavailable values and automated labels are preserved; no trading actions were taken. See [sharing assets and capture notes](docs/sharing.md).
+
 Browsing the dashboard does not require connecting a wallet. Screening results are heuristics and can be incomplete; they are not a manual contract audit.
 
 ## Quick start
@@ -57,11 +59,11 @@ Open [localhost:7860](http://localhost:7860). The [Dockerfile](Dockerfile) runs 
 With **Node.js 22.12+** and **npm**:
 
 ```bash
-npm ci
+npm install
 npm run dev -- --host 127.0.0.1 --port 7860
 ```
 
-Run these commands from the cloned repository. [.env.example](.env.example) documents optional GMGN API credentials. Some server routes invoke `gmgn-cli`, included as a dependency. Provider availability and authentication requirements affect which data can be retrieved.
+Run these commands from the cloned repository. The current lockfile is missing transitive entries, so `npm ci` fails; `npm install` resolves them and may update the lockfile. [.env.example](.env.example) documents optional GMGN API credentials. Some server routes invoke `gmgn-cli`, included as a dependency. Provider availability and authentication requirements affect which data can be retrieved.
 
 ### Project checks
 
