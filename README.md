@@ -4,156 +4,104 @@ sdk: docker
 app_port: 7860
 ---
 
+<div align="center">
+
 # Inception Flap Scanner
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Docker](https://img.shields.io/badge/Docker-Node.js_22-2496ED?logo=docker&logoColor=white)](Dockerfile)
-[![Network](https://img.shields.io/badge/Network-BNB_Smart_Chain-F0B90B?logo=binance&logoColor=white)](https://bscscan.com)
-[![Status](https://img.shields.io/badge/Status-Live_Production-4ade80)](#)
-[![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-yellow)](https://huggingface.co/spaces/Lucace/inception-flap-scanner)
-[![Security Audit](https://img.shields.io/badge/Security-4--Tier_Audit-66fcf1)](#-automated-4-tier-security-auditor)
-[![Awesome-Web3](https://awesome.re/mentioned-badge.svg)](https://github.com/ahmet/awesome-web3/blob/main/README.md#L343)
-[![GitHub stars](https://img.shields.io/github/stars/arbincept/inception-flap-scanner?style=social)](https://github.com/arbincept/inception-flap-scanner)
+**Explore BNB Chain token launches, bonding curves, and contract signals.**
 
-A real-time on-chain token launch screener, Flap.sh bonding curve telemetry tracker, and automated 4-tier contract security auditor on **BNB Smart Chain (BSC)**. Fully containerized with Docker and continuously deployed on Hugging Face Spaces.
+Built and maintained by **[Luca Celebrano · @Lukecele](https://github.com/Lukecele)**, founder of [Arbitrage Inception](https://github.com/arbincept).
 
-**Live Application:** [https://lucace-inception-flap-scanner.hf.space](https://lucace-inception-flap-scanner.hf.space)  
-**Awesome-Web3 Directory:** [Risk Management (Line 343)](https://github.com/ahmet/awesome-web3/blob/main/README.md#L343) ([Merged PR #795](https://github.com/ahmet/awesome-web3/pull/795))  
-**Hugging Face Space:** [https://huggingface.co/spaces/Lucace/inception-flap-scanner](https://huggingface.co/spaces/Lucace/inception-flap-scanner)  
-**License:** [MIT](./LICENSE)
+**[Open app](https://lucace-inception-flap-scanner.hf.space)** · **[Star this repository](https://github.com/arbincept/inception-flap-scanner)** · **[Follow Lukecele](https://github.com/Lukecele)**
 
-### Live UI Preview
+[Quick start](#quick-start) · [Contribute](#contribute) · [MIT license](LICENSE)
 
-![Inception Flap Scanner live feed](./docs/live-scanner.png)
+</div>
 
-This capture shows the public scanner feed with launch cards, bonding-curve progress and the staged security-audit signals. The feed is live and its contents change with on-chain activity.
+![Inception Flap Scanner launch cards and token screening dashboard](docs/live-scanner.png)
 
-## Demo & Concrete Example
+<sub>Application screenshot from this repository. Live data and available routes change over time.</sub>
 
-Open the [live scanner](https://lucace-inception-flap-scanner.hf.space) to inspect the current launch feed without providing a private key. Select a token to view its bonding-curve telemetry, holder concentration and automated audit verdict, then use the embedded DexScreener view for additional market context.
+## What you can explore
 
-Example workflow:
+- **Token launches:** a live dashboard for BNB Chain launch activity.
+- **Bonding curves:** progress, liquidity, and market-cap signals alongside token details.
+- **Contract screening:** tax signals, ERC-1167 proxy patterns, social duplication, and developer-wallet indicators.
+- **Market context:** links to external token explorers and chart views.
 
-1. Open a newly indexed launch from the live feed.
-2. Check the curve progress, liquidity, top-holder concentration and developer holding data.
-3. Read the four audit signals before deciding whether further research is warranted.
+Built with **React, Vite, Node.js, and ethers**, with a Docker deployment on [Hugging Face Spaces](https://huggingface.co/spaces/Lucace/inception-flap-scanner).
 
-The scanner is an informational, read-only tool; its signals are not investment advice and can be affected by RPC availability and changing on-chain data.
+## Try it
 
----
+1. Open the public scanner and select a launch card.
+2. Inspect bonding-curve progress, holder concentration, and developer holdings where data is available.
+3. Compare the automated screening signals with the linked source data.
 
-## 🏛️ System Architecture
+Browsing the dashboard does not require connecting a wallet. Screening results are heuristics and can be incomplete; they are not a manual contract audit.
 
-```mermaid
-flowchart TD
-    Node["BNB Smart Chain Nodes<br>(WebSocket and JSON-RPC)"] --> Ingestion["Live Contract Listener and Log Decoder"]
-    
-    subgraph CoreEngine["On-Chain Ingestion and Telemetry"]
-        Ingestion --> Sorter["Mempool Sorter and Deduplicator<br>(Strict Timestamp Descending)"]
-        Sorter --> Auditor["4-Tier Security Auditor"]
-        Sorter --> CurveTelemetry["Flap.sh Bonding Curve Telemetry Engine<br>(Progress Percent, Liquidity, Top 10 Holders)"]
-    end
+## Quick start
 
-    subgraph SecurityChecks["Automated 4-Tier Security Suite"]
-        Auditor --> Tax["1. Tax and Bot Dust Filter<br>(Max 8% Spam and Honeypot Safeguard)"]
-        Auditor --> Proxy["2. Bytecode Analysis<br>(ERC-1167 Proxy vs Custom Architecture)"]
-        Auditor --> Phish["3. Social Media Clone Detector<br>(Levenshtein Distance and Blacklist)"]
-        Auditor --> Dev["4. Dev Wallet Clustering<br>(Funding Source and Serial Deployer Check)"]
-        Tax --> Verdict["Consolidated Risk Score and Verdict"]
-        Proxy --> Verdict
-        Phish --> Verdict
-        Dev --> Verdict
-    end
-
-    subgraph UI["Interactive High-Contrast Interface (React 19)"]
-        CurveTelemetry --> TerminalUI["Live Launch Feed and Radar Stream"]
-        Verdict --> ModalUI["Portal Modal: Deep Audit and Telemetry"]
-        ModalUI --> DexScreener["Interactive DexScreener Visual Chart"]
-    end
-```
-
----
-
-## 🚀 Key Features
-
-### 1. Real-Time On-Chain Launch Ingestion
-- Listens directly to BNB Smart Chain block events and Flap.sh contract factory logs via high-speed RPC and WebSocket connections.
-- Deduplicates incoming token launches and sorts them strictly in real-time chronological order.
-
-### 2. Automated 4-Tier Security Auditor
-Before interacting with any newly deployed token, the built-in deterministic auditor analyzes 4 vulnerability vectors:
-1. **Tax & Bot Dust Filter (≤8% Threshold):** Automatically queries buy and sell tax rates. Serves as a primary mempool defense against high-frequency bot-driven dust launch spam and predatory honeypots, purging arbitrary or punitive fees from the radar stream (accounting for Flap's 1% platform fee, guaranteeing a total transaction tax under 9%).
-2. **ERC-1167 Minimal Proxy Verification:** Decodes runtime bytecode against official Flap minimal proxy implementations (`0x363d3d373d3d3d363d73...5af43d82803e903d91602b57fd5bf3`). Instantly distinguishes standard factory clones from non-standard custom proxy contracts, detecting custom tokenomic innovations, experimental bonding curves, or unverified modifications.
-3. **Social Clone & Phishing Detection:** Flags token impersonators, copycats, and duplicate social media handles (Twitter/X, Telegram) matching known projects.
-4. **Dev Wallet Clustering & Funding Origin:** Classifies deployer funding wallets (CEX/bridge vs. fresh private addresses) and tracks serial deployer history.
-
-### 3. Flap.sh Bonding Curve Telemetry
-- Real-time bonding curve accumulation progress towards DEX migration (target: $12,000 liquidity / 100% curve fill).
-- Tracks Market Cap (USD), Curve Liquidity (USD), Top 10 Holders concentration rate, and Developer Token Holding percentage.
-- Embedded DexScreener chart viewer for real-time candlestick price action.
-
-### 4. Non-Custodial Architecture & Zero-Secret Reliability
-- Operates 100% non-custodial and read-only.
-- Requires zero private keys, zero wallet credentials, and zero mandatory external API keys out-of-the-box.
-
----
-
-## 🛠️ Tech Stack
-
-- **Runtime:** Node.js 22 LTS (Alpine Linux)
-- **Frontend:** React 19, Vite, Lucide Icons, Modern CSS3 with Mobile Acceleration
-- **Web3 & RPC:** Ethers.js v6, BSC DataSeed RPCs
-- **Containerization & Hosting:** Docker (`Dockerfile`, EXPOSE 7860), Hugging Face Spaces (Docker SDK)
-
----
-
-## 🧪 Automated Testing Suite
-
-The security auditor and telemetry engine are validated by an automated unit test suite:
+### Docker
 
 ```bash
-# Run all unit tests
-npm test
-```
-
-Tests cover:
-- Tax risk bounds and threshold boundary validation (≤8% safe vs >8% predatory)
-- ERC-1167 minimal proxy bytecode matching and unverified proxy rejection
-- Social media handle copycat detection and duplicate detection
-- Developer wallet clustering and transaction volume classification
-- Bonding curve percentage clamping and edge case calculations
-- Mempool chronological descending order sorting
-
----
-
-## 🐳 Local Development (Docker)
-
-```bash
-# Build the Docker image
+git clone https://github.com/arbincept/inception-flap-scanner.git
+cd inception-flap-scanner
 docker build -t inception-flap-scanner .
-
-# Run container on port 7860
-docker run -p 7860:7860 inception-flap-scanner
+docker run --rm -p 7860:7860 inception-flap-scanner
 ```
 
-Visit [http://localhost:7860](http://localhost:7860) to view the scanner dashboard.
+Open [localhost:7860](http://localhost:7860). The [Dockerfile](Dockerfile) runs Node.js 22 and installs the GMGN CLI used by server routes.
 
----
+### Local development
 
-## 🌐 Directory Indexing
+With **Node.js 22.12+** and **npm**:
 
-- **[Awesome-Web3 Directory](https://github.com/ahmet/awesome-web3):** Officially reviewed and indexed under [Risk Management (Line 343)](https://github.com/ahmet/awesome-web3/blob/main/README.md#L343) via [Merged PR #795](https://github.com/ahmet/awesome-web3/pull/795).
+```bash
+npm ci
+npm run dev -- --host 127.0.0.1 --port 7860
+```
 
----
+Run these commands from the cloned repository. [.env.example](.env.example) documents optional GMGN API credentials. Some server routes invoke `gmgn-cli`, included as a dependency. Provider availability and authentication requirements affect which data can be retrieved.
 
-## ⭐ Support the Project
+### Project checks
 
-If you find this real-time screener or 4-tier security auditor useful for your research, monitoring, or on-chain tooling, please consider dropping a **Star** on GitHub. It directly supports open-source development and ecosystem maintenance!
+```bash
+npm test
+npm run lint
+npm run build
+```
 
-[![GitHub stars](https://img.shields.io/github/stars/arbincept/inception-flap-scanner?style=social)](https://github.com/arbincept/inception-flap-scanner)
+See [tests](tests) for the security and telemetry checks.
 
----
+## Architecture and deployment
 
-## 📄 License
+| Component | Responsibility |
+| :--- | :--- |
+| [Scanner UI](src/components/Scanner.jsx) | Launch cards, feed updates, and token selection. |
+| [Token detail view](src/components/TokenDetailModal.jsx) | Token metrics and external research links. |
+| [Screening utilities](src/utils/security-auditor.js) | Automated screening helpers. |
+| [Vite server configuration](vite.config.js) | Provider proxy routes, GMGN integration, and local social-history storage. |
 
-Released under the [MIT License](./LICENSE).
+The current backend lives in Vite's development-server middleware. A static `dist/` deployment alone does not provide those API routes. The Docker deployment keeps that server running.
+
+The server also exposes GMGN integration routes, including a swap route; review them before exposing a self-hosted instance. Keep API signing credentials private. The dashboard's screening labels should not be interpreted as guarantees about a token.
+
+## Open-source references
+
+Included in **Awesome-Web3** through [merged submission #795](https://github.com/ahmet/awesome-web3/pull/795).
+
+## Contribute
+
+Reproducible bug reports, clearer documentation, and focused improvements are welcome. Start with an [issue](https://github.com/arbincept/inception-flap-scanner/issues) describing the behavior, environment, and expected result. Include the relevant checks with a pull request.
+
+For sensitive reports, use the organization's [security policy](https://github.com/arbincept/.github/blob/main/SECURITY.md).
+
+## More from Lukecele
+
+This project is part of an independent ecosystem built by **[Luca Celebrano (@Lukecele)](https://github.com/Lukecele)**.
+
+[Arb-Inc All-in-Dex](https://github.com/arbincept/Arb-Inc-All-in-Dex) · [BSC Arbitrage Scanner](https://github.com/arbincept/bsc-arbitrage-scanner) · [Arbitrage Inc Earn](https://github.com/arbincept/arbitrage-inc-earn)
+
+If this project helps you, **[give it a star](https://github.com/arbincept/inception-flap-scanner)** and **[follow Lukecele](https://github.com/Lukecele)** for future builds. [Sponsorship](https://github.com/sponsors/Lukecele) helps support ongoing work.
+
+[Telegram](https://t.me/ArbitrageInception) · [Updates on X](https://x.com/Arbitrageincept) · [MIT license](LICENSE)
