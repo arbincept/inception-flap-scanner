@@ -75,6 +75,10 @@ npm run lint
 npm run build
 ```
 
+`npm test`, `npm run lint`, and `npm run build` run without provider credentials.
+GMGN credentials are optional for local live-data routes; when you clone the
+repository, provide your own keys in `.env` if you want to use those routes.
+
 See [tests](tests) for the security and telemetry checks.
 
 ## Architecture and deployment
