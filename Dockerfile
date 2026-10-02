@@ -6,7 +6,7 @@ RUN npm install -g gmgn-cli
 WORKDIR /app
 
 COPY package*.json ./
-RUN npm install
+RUN npm ci
 
 COPY . .
 

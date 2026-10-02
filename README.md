@@ -59,11 +59,11 @@ Open [localhost:7860](http://localhost:7860). The [Dockerfile](Dockerfile) runs 
 With **Node.js 22.12+** and **npm**:
 
 ```bash
-npm install
+npm ci
 npm run dev -- --host 127.0.0.1 --port 7860
 ```
 
-Run these commands from the cloned repository. The current lockfile is missing transitive entries, so `npm ci` fails; `npm install` resolves them and may update the lockfile. [.env.example](.env.example) documents optional GMGN API credentials. Some server routes invoke `gmgn-cli`, included as a dependency. Provider availability and authentication requirements affect which data can be retrieved.
+Run these commands from the cloned repository. The committed `package-lock.json` is the reproducible dependency set, so `npm ci` is the supported clean install. [.env.example](.env.example) documents optional GMGN API credentials. Some server routes invoke `gmgn-cli`, which is installed from the lockfile as an application dependency. Provider availability and authentication requirements affect which data can be retrieved.
 
 ### Project checks
 
@@ -84,7 +84,7 @@ See [tests](tests) for the security and telemetry checks.
 | [Screening utilities](src/utils/security-auditor.js) | Automated screening helpers. |
 | [Vite server configuration](vite.config.js) | Provider proxy routes, GMGN integration, and local social-history storage. |
 
-The current backend lives in Vite's development-server middleware. A static `dist/` deployment alone does not provide those API routes. The Docker deployment keeps that server running.
+The backend lives in Vite's development-server middleware. Run `npm run dev` for local development; the same process serves the UI and provider/API routes. A static `dist/` deployment alone does not provide those API routes. The Docker image starts this server on port `7860`, which is the runtime used by the Hugging Face Space.
 
 The server also exposes GMGN integration routes, including a swap route; review them before exposing a self-hosted instance. Keep API signing credentials private. The dashboard's screening labels should not be interpreted as guarantees about a token.
 
