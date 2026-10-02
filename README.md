@@ -8,6 +8,8 @@ app_port: 7860
 
 # Inception Flap Scanner
 
+[![CI](https://github.com/arbincept/inception-flap-scanner/actions/workflows/ci.yml/badge.svg)](https://github.com/arbincept/inception-flap-scanner/actions/workflows/ci.yml)
+
 **Explore BNB Chain token launches, bonding curves, and contract signals.**
 
 Built and maintained by **[Luca Celebrano · @Lukecele](https://github.com/Lukecele)**, founder of [Arbitrage Inception](https://github.com/arbincept).
