@@ -20,7 +20,7 @@
     "cloudscraper": "^4.6.0",
     "ethers": "^6.17.0",
     "gmgn-cli": "^1.4.9",
-    "lucide-react": "^1.47.0",
+    "lucide-react": "^1.48.0",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
     "request": "^2.88.2"
