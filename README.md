@@ -15,7 +15,7 @@ app_port: 7860
 
 Built and maintained by **[Luca Celebrano · @Lukecele](https://github.com/Lukecele)**, founder of [Arbitrage Inception](https://github.com/arbincept).
 
-**[Live Application (Render)](https://inception-flap-scanner.onrender.com)** · **[Hugging Face Mirror](https://lucace-inception-flap-scanner.hf.space)** · **[Star this repository](https://github.com/arbincept/inception-flap-scanner)** · **[Follow Lukecele](https://github.com/Lukecele)**
+**[Live Application](https://inception-flap-scanner.onrender.com)** · **[Star this repository](https://github.com/arbincept/inception-flap-scanner)** · **[Follow Lukecele](https://github.com/Lukecele)**
 
 [Watch the 20-second demo](docs/scanner-demo.webm) · [Source](https://github.com/arbincept/inception-flap-scanner) · [Quick start](#quick-start) · [Contribute](#contribute) · [MIT license](LICENSE)
 
@@ -32,7 +32,7 @@ Built and maintained by **[Luca Celebrano · @Lukecele](https://github.com/Lukec
 - **Contract screening:** tax signals, ERC-1167 proxy patterns, social duplication, and developer-wallet indicators.
 - **Market context:** links to external token explorers and chart views.
 
-Built with **React, Vite, Node.js, and ethers**, with a Docker deployment on [Hugging Face Spaces](https://huggingface.co/spaces/Lucace/inception-flap-scanner).
+Built with **React, Vite, Node.js, and ethers**, with a live container deployment on [Render](https://inception-flap-scanner.onrender.com).
 
 ## Try it
 
