@@ -9,8 +9,9 @@ app_port: 7860
 # Inception Flap Scanner
 
 [![CI](https://github.com/arbincept/inception-flap-scanner/actions/workflows/ci.yml/badge.svg)](https://github.com/arbincept/inception-flap-scanner/actions/workflows/ci.yml)
+[![PWA Ready](https://img.shields.io/badge/PWA-Installable-863BFF?logo=pwa&logoColor=white)](https://inception-flap-scanner.onrender.com)
 
-**Explore BNB Chain token launches, bonding curves, and contract signals.**
+**Explore BNB Chain token launches, bonding curves, and contract signals as an installable Progressive Web App (PWA).**
 
 Built and maintained by **[Luca Celebrano · @Lukecele](https://github.com/Lukecele)**, founder of [Arbitrage Inception](https://github.com/arbincept).
 
