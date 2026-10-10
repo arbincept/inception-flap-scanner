@@ -14,7 +14,7 @@ app_port: 7860
 
 Built and maintained by **[Luca Celebrano · @Lukecele](https://github.com/Lukecele)**, founder of [Arbitrage Inception](https://github.com/arbincept).
 
-**[Open app](https://lucace-inception-flap-scanner.hf.space)** · **[Star this repository](https://github.com/arbincept/inception-flap-scanner)** · **[Follow Lukecele](https://github.com/Lukecele)**
+**[Open on Vercel (Live PWA)](https://inception-flap-scanner.vercel.app)** · **[Open on Hugging Face](https://lucace-inception-flap-scanner.hf.space)** · **[Star this repository](https://github.com/arbincept/inception-flap-scanner)** · **[Follow Lukecele](https://github.com/Lukecele)**
 
 [Watch the 20-second demo](docs/scanner-demo.webm) · [Source](https://github.com/arbincept/inception-flap-scanner) · [Quick start](#quick-start) · [Contribute](#contribute) · [MIT license](LICENSE)
 
