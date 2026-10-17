@@ -52,7 +52,7 @@ function App() {
                 fontWeight: 'bold'
               }}
             >
-              Licenza Libera MIT (100% Free)
+              MIT License (100% Free)
             </a>
             <span style={{
               padding: '2px 8px',
@@ -63,7 +63,7 @@ function App() {
               fontFamily: 'monospace',
               fontSize: '0.7rem'
             }}>
-              100% Gratuito & No-Profit
+              100% Free & Open Source
             </span>
             <a
               href="https://github.com/arbincept/inception-flap-scanner"
@@ -83,7 +83,7 @@ function App() {
           borderTop: '1px solid rgba(255, 255, 255, 0.08)',
           paddingTop: '0.5rem'
         }}>
-          ⚖️ <strong>Note Legali:</strong> Software open source distribuito gratuitamente per scopi didattici e di studio euristico on-chain. Zero finalità lucrative, nessuna consulenza finanziaria.
+          ⚖️ <strong>Legal Notice:</strong> Open-source software released free of charge for educational and on-chain heuristic research under the MIT License. Zero proprietary copyright reserved. Non-commercial research tool; does not provide investment or financial advice.
         </div>
       </footer>
     </div>
