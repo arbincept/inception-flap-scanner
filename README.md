@@ -17,11 +17,14 @@ app_port: 7860
 
 Built and maintained by **[Luca Celebrano · @Lukecele](https://github.com/Lukecele)**, founder of [Arbitrage Inception](https://github.com/arbincept).
 
-**[Live Application](https://inception-flap-scanner.onrender.com)** · **[Star this repository](https://github.com/arbincept/inception-flap-scanner)** · **[Follow Lukecele](https://github.com/Lukecele)**
-
-[Watch the 20-second demo](docs/scanner-demo.webm) · [Source](https://github.com/arbincept/inception-flap-scanner) · [Quick start](#quick-start) · [Contribute](#contribute) · [MIT license](LICENSE)
+**[Live Application](https://inception-flap-scanner.onrender.com)** · **[Follow Lukecele](https://github.com/Lukecele)** · **[Watch the 20-second demo](docs/scanner-demo.webm)** · **[MIT license](LICENSE)**
 
 </div>
+
+> [!TIP]
+> **Support Open-Source On-Chain Tooling!**  
+> If **Inception Flap Scanner** helps your token screening, research, or contract auditing, please **give this repo a ⭐ Star** in the top-right corner! It directly supports ongoing development and live scanner maintenance.
+
 
 ![Inception Flap Scanner launch cards and token screening dashboard](docs/live-scanner.png)
 
