@@ -22,7 +22,7 @@
     "gmgn-cli": "^1.4.9",
     "lucide-react": "^1.47.0",
     "react": "^19.3.0",
-    "react-dom": "^19.3.0",
+    "react-dom": "^19.3.1",
     "request": "^2.88.2"
   },
   "devDependencies": {
